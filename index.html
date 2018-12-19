@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <title>Let it Train</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    
+</head>
+<body>
+    <div class="container" id="welcome">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                      <h1 class="display-4">Let it Train!</h1>
+                      <p class="lead">Create your own trains (or busses, subways, etc.) by adding them in the form below. The table will show you when the next train is scheduled to arrive.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10" id="trainTable">
+                <div class="card">
+                    <div class="card-header">Current Train Schedule</div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">Train Name</th>
+                                <th scope="col">Destination</th>
+                                <th scope="col">Frequency (min)</th>
+                                <th scope="col">Next Arrival</th>
+                                <th scope="col">Minutes Away</th>
+                              </tr>
+                            </thead>
+                            <!-- Sample below... will have them coded in later... -->
+                            <tbody>
+                              <tr>
+                                <td>Trenton Express</td>
+                                <td>Trenton</td>
+                                <td>25</td>
+                                <td>05:35 PM</td>
+                                <td>10</td>
+                              </tr>
+                              <tr>
+                                <td>Oregon Trail</td>
+                                <td>Salem, Oregon</td>
+                                <td>3600</td>
+                                <td>01:39 PM</td>
+                                <td>1154</td>
+                              </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10" id="trainForm">
+                <div class="card">
+                    <div class="card-header">Add Your Trains Below:</div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                              <label for="trainName">Train Name:</label>
+                              <input type="name" class="form-control" id="trainName" aria-describedby="trainName" placeholder="Enter a name for a train you'd like.">
+                            </div>
+                            <div class="form-group">
+                              <label for="destination">Destination:</label>
+                              <input type="destination" class="form-control" id="destination" placeholder="Enter a destination for this train you'd like.">
+                            </div>
+                            <div class="form-group">
+                                <label for="firstTime">First Train Time: (hh:mm - military time)</label>
+                                <input type="firstTime" class="form-control" id="firstTime" placeholder="Enter the time that the first train will leave.">
+                            </div>
+                            <div class="form-group">
+                                <label for="frequency">Frequency: (min)</label>
+                                <input type="frequency" class="form-control" id="frequency" placeholder="Enter how frequent this train will arrive.">
+                            </div>
+                        </form>
+                      <a href="#" class="btn">Submit</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+
+    <div class="container" id="footerBuff">
+        <div class="row">
+            <div class="col-md-12"></div>
+        </div>
+    </div>
+
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Javascript -->
+    <script src="app.js"></script>
+</body>
+</html>
