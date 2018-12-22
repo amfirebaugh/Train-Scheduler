@@ -23,15 +23,11 @@ $("#add-train-btn").on("click", function(event) {
     // input needs to be time in minutes
     var inputFrequency = parseInt($("#frequency").val().trim());
 
-    // var returnCalc = scheduleMath(inputFirstTime, inputFrequency);
-
     var newTrain = {
         dataName: inputTrainName,
         dataDest: inputDestination,
         dataBegin: inputFirstTime,
         dataFreq: inputFrequency,
-        // dataArrival: returnCalc[0],
-        // dataMin: returnCalc[1]
     };
 
     database.ref().push(newTrain);
@@ -48,12 +44,6 @@ $("#add-train-btn").on("click", function(event) {
     $("#frequency").val("");
 });
 
-// function scheduleMath(firstTrain, trainFreq) {
-    
-    
-//     return [nextTrain, timeNextTrain];
-// }
-
 database.ref().on("child_added", function(childSnap) {
     console.log(childSnap.val());
 
@@ -62,7 +52,8 @@ database.ref().on("child_added", function(childSnap) {
     inputFirstTime = childSnap.val().dataBegin;
     inputFrequency = childSnap.val().dataFreq;
 
-    var inputFirstTimeConverted = moment(inputFirstTime, "hh:mm").subtract(1, "day");
+    // my time calculations are below using the moment.js library
+    var inputFirstTimeConverted = moment(inputFirstTime, "hh:mm");
     var timeDiff = moment().diff(moment(inputFirstTimeConverted), "minutes");
     var timeRem = timeDiff % inputFrequency;
     var timeNextTrain = inputFrequency - timeRem;
@@ -75,6 +66,7 @@ database.ref().on("child_added", function(childSnap) {
     console.log(timeNextTrain);
     console.log(nextTrainMin);
 
+    //below adds the data to the empty table, appending each new row. this will happen upon user clicking the submit button since we're still inside this function
     var newRow = $(`
     <tr>
         <td>${inputTrainName}</td>
@@ -84,7 +76,6 @@ database.ref().on("child_added", function(childSnap) {
         <td>${timeNextTrain}</td>
     </tr>
     `);
-
     $("#train-schedule").append(newRow);
 
 }, function(errorObject) {
