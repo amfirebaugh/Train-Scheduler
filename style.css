@@ -1,5 +1,7 @@
 body {
     background: url("images/train_background_2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #welcome {
