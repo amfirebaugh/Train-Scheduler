@@ -16,6 +16,8 @@ Do you frequently use a subway, train, or bus that runs on a schedule? You can i
 
 HTML, CSS, Bootstrap, jQuery, Firebase, Moment.js
 
+![screen shot of Train Scheduler](./letItTrain.JPG)
+
 ### Future Development
 
 Since this site has many real-world usages there are many ways it could grow. This site could call on several various API's to gather information for the client/user looking for specific subways, trains, busses, etc. and then interact with that data in a multitude of ways. Clients could build an entire travel schedule, build their own tables of transportation methods and schedules, etc. Using Moment.js the client could also choose how they would like to view and format the date and time information.
